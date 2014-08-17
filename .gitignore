@@ -1,5 +1,11 @@
+# Play
 logs
 project/project
 project/target
 target
 tmp
+
+# Eclipse
+.classpath
+.project
+.settings
