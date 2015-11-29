@@ -1,17 +1,13 @@
 package security
 
-import org.jasypt.digest._
-import org.jasypt.digest.config._
-import org.jasypt.util.password.{StrongPasswordEncryptor, PasswordEncryptor}
+import org.mindrot.jbcrypt.BCrypt
 
 /**
  * A password encryptor that passes through to the string digester on the backend.
  */
 object Password
 {
-  lazy val passwordEncryptor = new StrongPasswordEncryptor()
+  def checkPassword(message: String, digest: String) = BCrypt.checkpw(message, digest)
 
-  def checkPassword(message: String, digest: String) = passwordEncryptor.checkPassword(message, digest)
-
-  def encryptPassword(p1: String) = passwordEncryptor.encryptPassword(p1)
+  def encryptPassword(plaintext: String) = BCrypt.hashpw(plaintext, BCrypt.gensalt())
 }
