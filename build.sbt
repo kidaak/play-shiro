@@ -8,7 +8,7 @@ libraryDependencies ++= Seq(
   evolutions,
   jdbc,
   "com.typesafe.play" %% "anorm"      % "2.4.0",
-  "org.mindrot" % "jbcrypt" % "0.3m",
+  "org.mindrot"        % "jbcrypt"    % "0.3m",
   "org.apache.shiro"   % "shiro-core" % "1.2.4"
 )
 
